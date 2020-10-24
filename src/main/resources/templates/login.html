@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>reveal</title>
+        <link rel="stylesheet"  href="styles/main.css">
+        <link rel="stylesheet"  href="styles/common.css">
+
+    </head>
+
+    <body>
+        <header>
+            <h1 class="logo">reveal</h1>
+            <p class="description">anonymously reveal the gossips you heard to your group.
+                <br>you heard none&quest; <strike>hear</strike> see them now
+            </p>
+        </header>
+            
+        <!--
+            options to signup/login
+        -->
+        <section class="frms">
+            <section id="register">
+                <div id="registrationdiv">
+                    <fieldset id = "register" class="register">
+                        <legend hidden>Register</legend>
+                        <label> First Name
+                            <input type="text" class ="signup" name="firstName" required>
+                        </label>
+                        <label>Last Name
+                            <input type="text" class="lastName signup" name="lastName" required>
+                        </label>
+                        <label>Mail Id
+                            <input type="email" class="email signup" name="mailId" required>
+                        </label>
+                        <label>User Name
+                            <input type="text" class="userName signup" name="userName" required>
+                        </label>
+                        <label>Password
+                            <input type="password" class="password signup" name="password" required>
+                        </label>
+                        <label>Create a New Group
+                            <input class="newGroup signup" name="groupName">
+                        </label>
+                        <!-- <label>Group
+                            <select class="groupMenu signup" id="groupMenu" required>
+                                
+                                    Will populate opitions in run time.
+                               
+                                <option id="nullGroup" hidden>none</option>
+                            </select>
+                        </label>   -->                  
+                        <button class= "signup onboardme" name="register">Register</button>
+                        <p id="f-reg-msg" class="f-msg" hidded></p>
+                    </fieldset>
+                </div>
+                <button id = "registerToLogin" class= "signin togglePage" name="login">Existing User&quest;</button>
+            </section>
+            <section id="login">
+                <div id="logindiv">
+                    <fieldset id="login" class="lgn">
+                        <legend hidden>Login</legend>
+                        <label>
+                            <input type="text" class="signin" name="userName" required placeholder="User Name">
+                        </label>
+        
+                        <label>
+                            <input type="password" class="signin" name="password" required placeholder="Password">
+                        </label>
+                        <p hidden id='f-lgn-msg' class='f-msg'></p>
+                        <button name="signin" class="signin logmein">Sign In</button>
+                        <a href="#forgot" class="forgot">Forgot Password&quest;</a>
+                    </fieldset>
+                </div>
+                <button id="loginToRegister" class= "signup togglePage" name="register">Not Registered yet&quest;</button>
+            </section>
+            <section id="forgot">
+                <div id = "fgt-psd">
+                    <fieldset id="forgotpass" class="frgt">
+                        <legend hidden>Forgot Password</legend>
+                        <label>
+                            <input type="text" class="signin" name="userName" required placeholder="User Name">
+                        </label>
+                        <button name="request_reset" class="request_reset">Send Password</button>
+                        <p hidden class="rst-msg" id="rst-msg"></p>
+                    </fieldset>
+                </div>
+                <button id="loginToRegister" class= "signup togglePage" name="register">Back to Sign In</button>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </section>
+        </section>
+
+            
+
+        <footer>
+            <span>Copyright &copy; reveal 2020</span>
+        </footer>
+
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

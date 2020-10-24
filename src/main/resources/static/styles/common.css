@@ -1,0 +1,26 @@
+html{
+    background-color: rgb(240, 240, 245);
+    padding-top: 1%;
+    padding-bottom: 3%;
+}
+.logo{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+}
+
+footer {
+       
+    position: absolute;
+    padding-bottom: 5%;
+    padding-left: 40%;
+    float: inline-end;
+    margin-top: 60%;
+}   
+
+button:hover{
+    background-color: whitesmoke;
+    
+}
