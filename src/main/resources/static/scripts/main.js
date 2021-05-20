@@ -1,4 +1,4 @@
-let backendURL = 'http://localhost:9999'
+let backendURL = 'https://reveal-backend.herokuapp.com'
 let authURL = 'https://reveal-auth.herokuapp.com/identity-management/v1'
 
 let loggingIn = document.getElementById("login")

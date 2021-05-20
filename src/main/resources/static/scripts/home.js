@@ -1,4 +1,4 @@
-let backendLocation = 'http://localhost:9999'
+let backendLocation = 'https://reveal-backend.herokuapp.com'
 
 let postsSection = document.getElementById('posts');
 let bodyEnding = document.getElementById('end');
@@ -26,7 +26,7 @@ postMyGossip.addEventListener('click',()=>{
 
 //fetching posts from backend 
 
-let restCall = fetch('http://localhost:9999/posts?groupId=1').then(function(response){
+let restCall = fetch('https://reveal-backend.herokuapp.com/posts?groupId=1').then(function(response){
     console.log(response.status);
    // console.log(response.json());
     return response.json();
