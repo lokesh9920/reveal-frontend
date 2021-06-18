@@ -1,13 +1,17 @@
 let backendLocation = 'https://reveal-backend.herokuapp.com'
 //let backendLocation = 'http://localhost:9999'
-
+let logOutToken = '';
 let postsSection = document.getElementById('posts');
 let bodyEnding = document.getElementById('end');
 
 let postBox = document.querySelector('textarea.postwriter');
 let postMyGossip = document.querySelector('button.postwriter');
+let logMeOut = document.querySelector('button.logmeout');
 
 
+logMeOut.addEventListener('click',()=>{
+    setCookie(logOutToken); //sets invalid value to the token, inorder to logot
+});
 postMyGossip.addEventListener('click',()=>{
     let requestBody = postBox.value;
     //checking for empty posts and invalidating those

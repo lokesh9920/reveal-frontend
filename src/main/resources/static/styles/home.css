@@ -57,6 +57,14 @@ header{
     width: 200px;
     
   }
+.settings{
+	
+    float: right;
+    
+    width: 20%;
+    margin-right: 2%;
+
+}
 .logmeout{
    	width: 30%;
     float: right;
@@ -74,9 +82,8 @@ header{
   }
 .content{
     float: right;
-    
     width: 40%;
-    margin-right: 30%;
+    margin-right: 10%;
 
 }
 .postwriter{
@@ -167,6 +174,7 @@ header{
   border-bottom-style: ridge;
   
 }
+
 #end{
   max-width: 50%;
   font-size: 150%;
