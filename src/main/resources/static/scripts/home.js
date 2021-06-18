@@ -10,13 +10,14 @@ let logMeOut = document.querySelector('button.logmeout');
 
 
 logMeOut.addEventListener('click',()=>{
-    setCookie(logOutToken); //sets invalid value to the token, inorder to logot
+    setCookie(logOutToken); //sets invalid value to the token, inorder to logout
+    window.location.reload();
 });
 postMyGossip.addEventListener('click',()=>{
     let requestBody = postBox.value;
     //checking for empty posts and invalidating those
     if(requestBody.trim().length !== 0){
-	    fetch(backendLocation+'/posts',{
+	    fetch(backendLocation+'/posts',{ 
 	        method: 'POST',
 	       // credentials: 'include',
 	        headers: {
@@ -28,8 +29,8 @@ postMyGossip.addEventListener('click',()=>{
 	        },
 	        body: JSON.stringify({'postCreator': 'dummyUser','groupId': 1, 'postContent': requestBody})
 	    }).then((response)=>{
-	        if(response.status===201){
-	            postBox.nodeValue = '';
+	        if(response.status === 201){
+	            postBox.value = '';                
 	        }
 	    })
     }});
@@ -124,3 +125,8 @@ let restCall = fetch('https://reveal-backend.herokuapp.com/posts?groupId=1',{
 
     });
 });
+
+function setCookie(accessToken){
+    document.cookie = 'access-token='+accessToken;
+
+}
