@@ -26,7 +26,8 @@ forgotPage.style.display="none";
 
 registerButton.addEventListener('click', function(){
     let registrationFormElements = registrationForm;
-    let requestBody = JSON.stringify({'firstName': registrationFormElements['firstName'].value,'lastName': registrationFormElements['lastName'].value, 'mailId': registrationFormElements['mailId'].value, 'userName': registrationFormElements['userName'].value, 'password': registrationFormElements['password'].value, 'groupName': registrationFormElements['groupName'].value});
+    //group name concept is removed and hence only default value is used now.
+    let requestBody = JSON.stringify({'firstName': registrationFormElements['firstName'].value,'lastName': registrationFormElements['lastName'].value, 'mailId': registrationFormElements['mailId'].value, 'userName': registrationFormElements['userName'].value, 'password': registrationFormElements['password'].value, 'groupName': 'DEFAULT'});
     let requestPost = fetch(authURL+'/users/register',{
     	method: 'POST',
     	headers: {
@@ -154,21 +155,23 @@ document.querySelector('a.forgot').addEventListener('click',function(){
     forgotPage.style.display="block";
 
 });
-//let restCallForGroupsList = fetch(backendURL+"/groups").then(function(response){
-//        
-//        return response.json();
-//    }).then(function(json){
-//        console.log(json.groups.length);
-//
-//        json.groups.forEach(element => {
-//            let optionElement = document.createElement('option');
-//            optionElement.textContent = element.groupName;
-//            groupDropDown.appendChild(optionElement);
-//           // groupDropDown.insertBefore(optionElement,nullOption.nextSibling);
-//        
-//        });
-//
-//    });
+
+// removing group fetching logic
+// let restCallForGroupsList = fetch(authURL+"/groups").then(function(response){
+        
+//         return response.json();
+//     }).then(function(json){
+//         console.log(json.groups.length);
+
+//         json.groups.forEach(element => {
+//             let optionElement = document.createElement('option');
+//             optionElement.textContent = element.groupName;
+//             groupDropDown.appendChild(optionElement);
+//            // groupDropDown.insertBefore(optionElement,nullOption.nextSibling);
+        
+//         });
+
+//     });
 
 function setCookie(accessToken){
     document.cookie = 'access-token='+accessToken;
