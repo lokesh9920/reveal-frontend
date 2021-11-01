@@ -1,5 +1,31 @@
+let backendLocation = 'http://localhost:9999'
+
 let postsSection = document.getElementById('posts');
 let bodyEnding = document.getElementById('end');
+
+let postBox = document.querySelector('textarea.postwriter');
+let postMyGossip = document.querySelector('button.postwriter');
+
+
+postMyGossip.addEventListener('click',()=>{
+    let requestBody = postBox.value;
+    console.log(requestBody);
+
+    fetch(backendLocation+'/posts',{
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({'postCreator': 'testUser','group': 1, 'postContent': requestBody})
+    }).then((response)=>{
+        if(response.status===201){
+            console.log('posted successfully');
+        }
+    })
+})
+
+//fetching posts from backend 
+
 let restCall = fetch('http://localhost:9999/posts?groupId=1').then(function(response){
     console.log(response.status);
    // console.log(response.json());

@@ -24,7 +24,7 @@ public class ApplicationController {
 	public String login(ServletRequest request) {
 		
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		
+
 		return "login";
 	}
 }

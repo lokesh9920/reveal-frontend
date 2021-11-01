@@ -154,21 +154,21 @@ document.querySelector('a.forgot').addEventListener('click',function(){
     forgotPage.style.display="block";
 
 });
-let restCallForGroupsList = fetch(backendURL+"/groups").then(function(response){
-        
-        return response.json();
-    }).then(function(json){
-        console.log(json.groups.length);
-
-        json.groups.forEach(element => {
-            let optionElement = document.createElement('option');
-            optionElement.textContent = element.groupName;
-            groupDropDown.appendChild(optionElement);
-           // groupDropDown.insertBefore(optionElement,nullOption.nextSibling);
-        
-        });
-
-    });
+//let restCallForGroupsList = fetch(backendURL+"/groups").then(function(response){
+//        
+//        return response.json();
+//    }).then(function(json){
+//        console.log(json.groups.length);
+//
+//        json.groups.forEach(element => {
+//            let optionElement = document.createElement('option');
+//            optionElement.textContent = element.groupName;
+//            groupDropDown.appendChild(optionElement);
+//           // groupDropDown.insertBefore(optionElement,nullOption.nextSibling);
+//        
+//        });
+//
+//    });
 
 function setCookie(accessToken){
     document.cookie = 'access-token='+accessToken;

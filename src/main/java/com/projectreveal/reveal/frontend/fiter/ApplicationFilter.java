@@ -41,7 +41,7 @@ public class ApplicationFilter implements Filter{
 				for(Cookie cookie: cookies) {
 					if(cookie.getName().equals("access-token")) {
 						System.out.println("The cookie is : " + cookie.getValue());
-						userName = validateToken.verifyToken(cookie.getValue());
+						userName = validateToken.verifyToken(request, cookie.getValue());
 						break;
 					}
 						
